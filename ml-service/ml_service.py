@@ -1,28 +1,4 @@
-"""
-ml_service.py — Air-Writing Recognition: Flask ML Microservice
-Far-Western University, School of Engineering
 
-This service is the bridge between the Node.js/Express web app and the CNN model.
-It runs independently on port 6000 and exposes two endpoints:
-
-    POST /predict   — Accepts a base64 PNG image from the webapp canvas,
-                      preprocesses it to 64×64 grayscale, runs the CNN,
-                      and returns the predicted character + confidence.
-
-    GET  /health    — Liveness check so the frontend can show ML status.
-
-Pipeline (per request):
-  base64 PNG  →  decode  →  RGBA→gray  →  bounding-box crop
-             →  pad to square  →  resize 64×64  →  normalize [0,1]
-             →  noise threshold  →  CNN predict  →  JSON response
-s
-Run:
-    pip install flask flask-cors tensorflow opencv-python numpy pillow
-    python ml_service.py
-
-The Node predictController already points at http://localhost:6000,
-so no further wiring is needed on the Express side.
-"""
 
 import os
 import sys

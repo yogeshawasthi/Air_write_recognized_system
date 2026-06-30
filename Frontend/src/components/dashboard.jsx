@@ -42,6 +42,7 @@ export default function Dashboard({expand}) {
 
       {/* Status containers */}
       <div className='w-full flex justify-around items-center px-2'>
+
         <div className='flex items-center p-1.5'>
             <div className='relative h-20 w-50 rounded-md flex justify-around items-center shadow-md bg-white dark:bg-gray-800 border dark:border-gray-700'>
                 <div className='text-left'>
@@ -53,8 +54,6 @@ export default function Dashboard({expand}) {
                 </div>
             </div>
         </div>
-                </div>
-            </nav>
 
         <div className='flex items-center p-1.5'>
             <div className='relative h-20 w-50 rounded-md flex justify-around items-center shadow-md bg-white dark:bg-gray-800 border dark:border-gray-700'>
@@ -79,6 +78,7 @@ export default function Dashboard({expand}) {
                 </div>
             </div>
         </div>
+
       </div>
 
       {/* Action containers */}
@@ -131,6 +131,7 @@ export default function Dashboard({expand}) {
             </div>
         </div>
       </div>
+
     </div>
   )
 }

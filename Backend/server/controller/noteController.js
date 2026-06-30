@@ -27,8 +27,9 @@ exports.getAllNotes = async(req,res)=>{
 // controller to create a new Note
 exports.createNote = async(req,res)=>{
     try {
+        const userId = req.user._id;
         // const userId = req.user._id;
-        const {title,recognizedText,strokeImagePath,userId} = req.body;
+        const {title,recognizedText,strokeImagePath} = req.body;
         if(!title){
             return res.status(400).json({
                 message:"Title is required"

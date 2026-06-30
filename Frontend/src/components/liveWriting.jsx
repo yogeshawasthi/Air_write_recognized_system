@@ -270,7 +270,7 @@ export default function LiveWriting() {
     setSaving(true)
     try {
       const full = sessionText ? `${sessionText} ${pendingWord}` : pendingWord
-      await api.post('/notes', {
+      await api.post('/note', {
         title:          noteTitle.trim(),
         recognizedText: full,
       }, { withCredentials: true })
